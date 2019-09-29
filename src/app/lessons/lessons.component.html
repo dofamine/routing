@@ -1,7 +1,7 @@
 <div class="list-group">
   <a class="list-group-item"
      *ngFor="let lesson of lessons"
-     [routerLink]="['lessons', lesson.id]"
+     [routerLink]="['/lessons', lesson.id]"
      [queryParams]="{'allowEdit': lesson.allowEdit, 'lessonName': lesson.name}">
     {{ lesson.name }}
   </a>
