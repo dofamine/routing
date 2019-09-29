@@ -1,0 +1,10 @@
+<div>
+  <h5>Users</h5>
+  <ul *ngFor="let user of users">
+    <li>{{ user.id }}</li>
+    <li (click)="goToUserPage(user.id)">{{ user.name }}</li>
+    <li>{{ user.sex }}</li>
+  </ul>
+</div>
+
+<router-outlet></router-outlet>

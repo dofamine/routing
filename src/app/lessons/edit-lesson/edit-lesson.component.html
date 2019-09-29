@@ -1,0 +1,19 @@
+<div class="form-group">
+  <label for="name">Lesson</label>
+  <input type="text"
+         [(ngModel)]="name"
+         id="name"
+         class="form-control">
+</div>
+<div class="form-group">
+  <label for="category">Lesson Category</label>
+  <select id="category" class="form-control" [(ngModel)]="category">
+    <option [selected]="lesson.category === category"
+            [value]="category"
+            *ngFor="let category of lessonCategories">{{category}}</option>
+  </select>
+</div>
+
+<button class="btn btn-danger"
+        (click)="updateLesson()"> edit
+</button>

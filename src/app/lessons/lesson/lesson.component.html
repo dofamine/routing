@@ -1,0 +1,8 @@
+<ng-container *ngIf="lesson">
+	<h5>{{ lesson.name }}</h5>
+	<p>Lesson category is {{ lesson.category }}</p>
+
+	<button class="btn btn-danger"
+          [disabled]="!isEditable"
+	        (click)="goToEditLesson()">Go to edit lesson</button>
+</ng-container>
