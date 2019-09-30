@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { User } from './user.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from "../user.service";
 
 @Component({
@@ -16,6 +16,7 @@ export class UserComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    console.log(this.route.snapshot.queryParams);
     this.user = this.us.getUserById(+this.route.snapshot.params.id);
   }
 }

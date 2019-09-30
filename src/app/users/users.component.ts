@@ -20,6 +20,6 @@ export class UsersComponent implements OnInit {
   }
 
   goToUserPage(id: number) {
-    this.router.navigate(['users', id]);
+    this.router.navigate(['users', id], {queryParams: {name: "petya", surname: 'Ivanov'}});
   }
 }

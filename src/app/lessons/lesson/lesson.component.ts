@@ -17,14 +17,16 @@ export class LessonComponent implements OnInit {
 
   ngOnInit() {
     // disadvantages snapshot
-    this.lesson = this.route.snapshot.data.lesson;
+    console.log(this.route);
+    // this.lesson = this.route.snapshot.data.lesson;
+    // this.isEditable = this.route.snapshot.queryParams.allowEdit;
 
     // stream of data
-    // this.route.data.subscribe(({lesson}) => this.lesson = lesson);
-    // this.route.queryParams.subscribe(({allowEdit}) => this.isEditable = Boolean(Number(allowEdit)));
+    this.route.data.subscribe(({lesson}) => this.lesson = lesson);
+    this.route.queryParams.subscribe(({allowEdit}) => this.isEditable = Boolean(Number(allowEdit)));
   }
 
   goToEditLesson() {
-    this.router.navigate(['../', this.lesson.id ,'edit'],{ relativeTo: this.route});
+    this.router.navigate(['../', this.lesson.id ,'edit'],{ relativeTo: this.route });
   }
 }
